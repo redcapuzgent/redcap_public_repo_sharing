@@ -1,0 +1,17 @@
+{
+  "name": "Public Repo Sharing",
+  "namespace": "uzgent\\PublicRepoSharing",
+  "description": "This allows users to publicly share documents or images from the FileRepository. ",
+  "authors": [
+    {
+      "name": "Lieven Vaneeckhaute",
+      "email": "lieven.vaneeckhaute@uzgent.be",
+      "institution": "University Hospital Ghent"
+    }
+  ],
+  "documentation" : "howto.html",
+  "permissions": [
+    "redcap_every_page_top"
+  ]
+
+}
