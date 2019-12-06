@@ -19,7 +19,7 @@ $salt = $module->getProjectSetting("salt");
 <p>
 
 <?php
-    if ($salt === null || $salt == "")
+    if ($salt === null || trim($salt) == "")
     {
         ?>
             <p class="alert alert-warning">No salt was configured. Make sure you have a secure salt configured in your module configuration.</p>
