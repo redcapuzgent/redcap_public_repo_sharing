@@ -11,8 +11,6 @@ class PublicRepoSharing extends \ExternalModules\AbstractExternalModule {
         if (strpos($_SERVER['REQUEST_URI'], "/FileRepository/") !== FALSE)
         {
             $createLink = $this->getUrl("createLink.php", false, false );
-            $showDoc = $this->getUrl("showDoc.php", true, false);
-            var_dump($showDoc );
             ?>
             <script>
                 $( document ).ready(function () {

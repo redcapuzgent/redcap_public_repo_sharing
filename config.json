@@ -12,6 +12,11 @@
   "documentation" : "howto.html",
   "permissions": [
     "redcap_every_page_top"
-  ]
-
+  ],
+  "project-settings": [{
+    "key": "salt",
+    "name": "The project specific salt",
+    "required" : true,
+    "type": "text"
+  }]
 }

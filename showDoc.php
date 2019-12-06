@@ -1,9 +1,15 @@
 <?php
+require_once "HashURLGenerator.php";
+
+global $module;
+
 $hash = $_GET["hash"];
-$calculatedHash = sha1($_GET["pid"] . $_GET["id"] ."SALT");
 $project_id = $_GET["pid"];
-//require_once "../../redcap_connect.php";
-//require_once "../../redcap_v" . $redcap_version . "/Config/init_functions.php";
+$assetId = $_GET["id"];
+$salt = $module->getProjectSetting("salt");
+
+$gen = new HashURLGenerator();
+$calculatedHash = $gen->createHash($project_id , $assetId, $salt);
 
 if ($calculatedHash !== $hash)
 {

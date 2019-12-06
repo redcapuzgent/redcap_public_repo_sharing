@@ -1,16 +1,36 @@
 <?php
+require_once "HashURLGenerator.php";
 Authentication::authenticate();
 $HtmlPage = new HtmlPage();
 $HtmlPage->PrintHeaderExt();
+$gen = new HashURLGenerator();
+
+$projectId = $_GET["pid"];
+$assetId = $_GET["id"];
+global $conn;
+global $module;
+/**
+ * @var $module \ExternalModules\AbstractExternalModule
+ */
+$salt = $module->getProjectSetting("salt");
 
 ?>
 <h1 class="h1">Public link to the asset.</h1>
 <p>
 
 <?php
- $hash = $_GET["pid"] . $_GET["id"] ."SALT";
- $url = APP_PATH_WEBROOT_FULL. "redcap_v" . $redcap_version . "/ExternalModules/?prefix=public_repo_sharing&page=showDoc&hash=". sha1($hash)."&pid=".$_GET["pid"] . "&id=".$_GET["id"];
- $redirecturl = APP_PATH_WEBROOT_FULL. "redirect_me.php?target=/ExternalModules/&prefix=public_repo_sharing&page=showDoc&hash=". sha1($hash)."&pid=".$_GET["pid"] . "&id=".$_GET["id"];
+    if ($salt === null || $salt == "")
+    {
+        ?>
+            <p class="alert alert-warning">No salt was configured. Make sure you have a secure salt configured in your module configuration.</p>
+        <?php
+        exit(0);
+    }
+
+ $postUrl = $gen->createUrlSuffix($projectId, $assetId, $salt);
+ $hash = $projectId . $assetId ."SALT";
+ $url = APP_PATH_WEBROOT_FULL. "redcap_v" . $redcap_version . $postUrl;
+ $redirecturl = APP_PATH_WEBROOT_FULL. "redirect_me.php?target=". $gen->createUrlRedirectMeSuffix($projectId, $assetId, $salt);
 
 ?>
     Copy this link to your instrument:
