@@ -13,6 +13,9 @@
   "permissions": [
     "redcap_every_page_top"
   ],
+  "no-auth-pages": [
+    "showDoc"
+  ],
   "project-settings": [{
     "key": "salt",
     "name": "The project specific salt",

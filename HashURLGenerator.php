@@ -17,7 +17,7 @@ class HashURLGenerator
      */
     public function createUrlSuffix($pid, $id, $salt)
     {
-        $url = "/ExternalModules/?prefix=public_repo_sharing&page=showDoc&hash=".$this->createHash($pid, $id, $salt)."&pid=".$_GET["pid"] . "&id=".$_GET["id"];
+        $url = "api/?type=module&prefix=public_repo_sharing&page=showDoc&NOAUTH&hash=".$this->createHash($pid, $id, $salt)."&pid=".$_GET["pid"] . "&id=".$_GET["id"];
         return $url;
     }
     /**
