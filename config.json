@@ -1,25 +1,31 @@
 {
-  "name": "Public Repo Sharing",
-  "namespace": "uzgent\\PublicRepoSharing",
-  "description": "This allows users to publicly share documents or images from the FileRepository. ",
-  "authors": [
-    {
-      "name": "Lieven Vaneeckhaute",
-      "email": "redcap@uzgent.be",
-      "institution": "University Hospital Ghent"
+    "name": "Public Repo Sharing",
+    "namespace": "uzgent\\PublicRepoSharing",
+    "description": "<b>This module has been deprecated since the introduction of the redesigned File Repository in REDCap 13.1.0.</b><br>This allows users to publicly share documents or images from the File Repository.",
+    "authors": [
+        {
+            "name": "Lieven Vaneeckhaute",
+            "email": "redcap@uzgent.be",
+            "institution": "University Hospital Ghent"
+        },
+        {
+            "name": "Simon Vanderschaeghe",
+            "email": "redcap@uzgent.be",
+            "institution": "University Hospital Ghent"
+        }
+    ],
+    "documentation": "howto.html",
+    "no-auth-pages": [
+        "showDoc"
+    ],
+    "project-settings": [{
+            "key": "salt",
+            "name": "The project specific salt",
+            "required": true,
+            "type": "text"
+        }],
+    "framework-version": 12,
+    "compatibility": {
+        "redcap-max-version": "13.0.99"
     }
-  ],
-  "documentation" : "howto.html",
-  "permissions": [
-    "redcap_every_page_top"
-  ],
-  "no-auth-pages": [
-    "showDoc"
-  ],
-  "project-settings": [{
-    "key": "salt",
-    "name": "The project specific salt",
-    "required" : true,
-    "type": "text"
-  }]
 }

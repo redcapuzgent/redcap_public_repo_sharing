@@ -1,5 +1,6 @@
 <?php
 
+namespace uzgent\PublicRepoSharing;
 
 class HashURLGenerator
 {

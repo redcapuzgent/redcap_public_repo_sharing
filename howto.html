@@ -1,65 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Public Repo sharing howto guide.</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-</head>
-<body>
-<div class="container">
-    <h1><span class="glyphicon glyphicon-info-sign"></span>How to use the Public Repo sharing module:</h1>
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            Setup in REDCap
-        </div>
-        <div class="panel-body">
-            <ol>
-                <li>Enable the module.
-                </li>
-                <li>
-                    Configure a secret salt as a project setting. Keep this salt secret.
-                    <img src="setupSalt.png">
-                </li>
-                <li>
-                    In the FileRepository you should now have an extra link icon.
-                    <img src="filerepo.png">
-                </li>
-                <li>
-                    Clicking on the link icon will show you a page with an associated link.
-                    <img src="publiclink.png"><BR/>
-                </li>
-                <li>
-                    Using the link:<BR/>
-                    You can use the generated link in dynamic fields for example: <BR/>
-                    <blockquote>
-                        &lt;img src="Your_URL_here"&gt;
-                    </blockquote>
-                </li>
-            </ol>
+<html lang="en">
+    <head>
+        <title>Public Repo Sharing howto guide</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+              integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="alert alert-danger">This module has been deprecated since the introduction of the redesigned File Repository in REDCap 13.1.0.</div>
+            <h1><span class="glyphicon glyphicon-info-sign"></span> How to use the Public Repo Sharing module</h1>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Setup in REDCap
+                </div>
+                <div class="panel-body">
+                    <ol>
+                        <li>Enable the module for your project.
+                        </li>
+                        <li>
+                            Configure a secret salt as a project setting. Keep this salt secret.
+                            <img src="setupSalt.png" class="img-responsive" alt="Set the project specific salt">
+                        </li>
+                        <li>
+                            In the File Repository you should now have an extra link icon.
+                            <img src="filerepo.png" class="img-responsive" alt="Extra link in the File Repository">
+                        </li>
+                        <li>
+                            Clicking on the link icon will show you a page with an associated link.
+                            <img src="publiclink.png" class="img-responsive" alt="Public link to the asset"><br>
+                        </li>
+                        <li>
+                            Using the link:<br>
+                            You can use the generated link in dynamic fields, for example:<br>
+                            <blockquote>
+                                &lt;img src="Your_URL_here"&gt;
+                            </blockquote>
+                        </li>
+                    </ol>
 
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Frequently asked questions
+                </div>
+                <div class="panel-body">
+                    <h2>Can I disable the URLs after sending them out?</h2>
+                    <p>Yes, but this will impact all shared URLs. The available options are: </p>
+                    <ul>
+                        <li>Disable the module entirely.</li>
+                        <li>Change the salt project setting.</li>
+                    </ul>
+                    <div class="alert alert-danger">This will disable ALL existing links.</div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            Frequently asked questions
-        </div>
-        <div class="panel-body">
-            <H3>Can I disable the URLs after sending them out?</H3>
-            <p>Yes, but this will impact all shared URLs. The available options are: </p>
-            <ul>
-                <li>Disable the module entirely.</li>
-                <li>Change the salt project setting.</li>
-                <p class="alert alert-danger">This will disable ALL existing links.</p>
-            </ul>
-
-        </div>
-    </div>
-</body>
+    </body>
 </html>

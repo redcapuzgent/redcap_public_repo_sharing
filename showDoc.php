@@ -24,8 +24,8 @@ if ($calculatedHash !== $hash)
 			FROM redcap_docs d
 			LEFT JOIN redcap_docs_to_edocs e ON e.docs_id = d.docs_id
 			LEFT JOIN redcap_edocs_metadata m ON m.doc_id = e.doc_id
-			WHERE d.docs_id = $id and d.project_id = $project_id";
-    $result = db_query($sql);
+			WHERE d.docs_id = ? and d.project_id = ?";
+        $result = $module->query($sql, [$id, $project_id]);
     if ($result)
     {
         // Get query object
@@ -159,7 +159,7 @@ if ($calculatedHash !== $hash)
                 readfile_chunked(EDOC_PATH . $ddata->stored_name);
             } else {
                 // File content is stored in memory as $data, so print it
-                print $data;
+                print $module->escape($data);
             }
         }
 
