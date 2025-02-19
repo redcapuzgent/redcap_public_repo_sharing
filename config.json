@@ -1,7 +1,7 @@
 {
     "name": "Public Repo Sharing",
     "namespace": "uzgent\\PublicRepoSharing",
-    "description": "<b>This module has been deprecated since the introduction of the redesigned File Repository in REDCap 13.1.0.</b><br>This allows users to publicly share documents or images from the File Repository.",
+    "description": "<b>This module has been deprecated since the introduction of the redesigned File Repository in REDCap 13.1.0.</b><br>This module allows users to publicly share documents or images from the File Repository.",
     "authors": [
         {
             "name": "Lieven Vaneeckhaute",
