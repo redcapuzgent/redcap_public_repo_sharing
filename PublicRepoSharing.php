@@ -2,6 +2,8 @@
 
 namespace uzgent\PublicRepoSharing;
 
+use FileRepository;
+
 // Declare your module class, which must extend AbstractExternalModule
 class PublicRepoSharing extends \ExternalModules\AbstractExternalModule {
 
@@ -32,6 +34,10 @@ class PublicRepoSharing extends \ExternalModules\AbstractExternalModule {
 
         }
     }
-
+    
+    public static function download()
+    {
+        FileRepository::download();
+    }
 
 }

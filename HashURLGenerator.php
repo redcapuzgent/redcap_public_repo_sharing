@@ -21,16 +21,4 @@ class HashURLGenerator
         $url = "api/?type=module&prefix=public_repo_sharing&page=showDoc&NOAUTH&hash=".$this->createHash($pid, $id, $salt)."&pid=".$_GET["pid"] . "&id=".$_GET["id"];
         return $url;
     }
-    /**
-     * @param $pid
-     * @param $id
-     * @param $salt
-     * @return string
-     */
-    public function createUrlRedirectMeSuffix($pid, $id, $salt)
-    {
-        $url = "/ExternalModules/&prefix=public_repo_sharing&page=showDoc&hash=".$this->createHash($pid, $id, $salt)."&pid=".$_GET["pid"] . "&id=".$_GET["id"];
-        return $url;
-    }
-
 }
