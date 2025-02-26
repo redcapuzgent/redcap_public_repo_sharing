@@ -1,5 +1,7 @@
 <?php
 
+namespace uzgent\PublicRepoSharing;
+
 require_once "HashURLGenerator.php";
 
 global $module;
@@ -16,5 +18,5 @@ if ($calculatedHash !== $hash) {
     echo "Incorrect file";
     die();
 } else {
-    $data = PublicRepoSharing::download();
+    $data = \FileRepository::download();
 }

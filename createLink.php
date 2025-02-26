@@ -1,12 +1,15 @@
 <?php
+
+namespace uzgent\PublicRepoSharing;
+
 require_once "HashURLGenerator.php";
-Authentication::authenticate();
-$HtmlPage = new HtmlPage();
+\Authentication::authenticate();
+$HtmlPage = new \HtmlPage();
 $HtmlPage->PrintHeaderExt();
 $gen = new HashURLGenerator();
 
-$projectId = $_GET["pid"];
-$assetId = $_GET["id"];
+$projectId = $module->escape($_GET["pid"]);
+$assetId = $module->escape($_GET["id"]);
 global $conn;
 global $module;
 /**
